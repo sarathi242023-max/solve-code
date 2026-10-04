@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>{{ problem.title }} — Solve Code</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body>
+<nav class="navbar"><a href="/dashboard" class="logo"><span class="logo-mark">&lt;/&gt;</span> Solve<span>Code</span></a><a href="/dashboard" class="login-btn">Dashboard</a></nav>
+<div class="problem-layout">
+  <section class="problem-section">
+    <div class="problem-header"><span class="language-label">{{ language.upper() }}</span><span class="difficulty">{{ problem.difficulty }}</span></div>
+    <h1>{{ problem.title }}</h1>
+    <h3>Problem</h3><p>{{ problem.description }}</p>
+    <h3>Input</h3><pre class="sample">{{ problem.input }}</pre>
+    <h3>Output</h3><pre class="sample">{{ problem.output }}</pre>
+  </section>
+  <section class="editor-section">
+    <div class="editor-header"><span>{{ language.upper() }}</span><button onclick="runCode()" class="run-btn">▶ Run Code</button></div>
+    <textarea id="codeEditor" spellcheck="false">{{ problem.starter }}</textarea>
+    <div class="input-area"><label>Custom Input</label><textarea id="customInput" placeholder="Enter input here..."></textarea></div>
+    <div class="output-area"><div class="output-header"><span>Output</span><span id="status">Ready</span></div><pre id="output">Run your code to see output...</pre></div>
+  </section>
+</div>
+<script>
+async function runCode(){
+  const output=document.getElementById("output"), status=document.getElementById("status");
+  output.textContent="Running..."; status.textContent="Running";
+  try{
+    const r=await fetch("/api/run",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
+      language:"{{ language }}",code:document.getElementById("codeEditor").value,input:document.getElementById("customInput").value
+    })});
+    const d=await r.json(); output.textContent=d.output||"No output"; status.textContent=d.success?"Success ✓":"Error";
+  }catch(e){output.textContent=e.message;status.textContent="Error";}
+}
+</script>
+</body>
+</html>

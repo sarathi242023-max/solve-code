@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Login — Solve Code</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body class="auth-body">
+<div class="auth-container">
+  <div class="auth-brand"><a href="/" class="logo"><span class="logo-mark">&lt;/&gt;</span> Solve<span>Code</span></a></div>
+  <div class="auth-card">
+    <h1>Welcome Back 👋</h1><p>Continue your coding journey.</p>
+    <button class="google-btn" onclick="googleLogin()"><span>G</span> Continue with Google</button>
+    <div class="divider"><span>or continue with email</span></div>
+    <form id="loginForm"><label>Email</label><input id="email" type="email" placeholder="you@example.com" required><label>Password</label><input id="password" type="password" placeholder="Enter password" required><button class="primary-btn full-btn" type="submit">Login</button></form>
+    <p class="auth-footer">Don't have an account? <a href="/signup">Create account</a></p>
+  </div>
+</div>
+<script>
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const r = await fetch("/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email.value,password:password.value})});
+  const d = await r.json(); d.success ? location.href=d.redirect : alert(d.message);
+});
+function googleLogin(){ alert("Configure Google OAuth credentials and /auth/google routes to enable Google login."); }
+</script>
+</body>
+</html>

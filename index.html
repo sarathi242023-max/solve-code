@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solve Code — Learn. Code. Solve.</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<nav class="navbar">
+  <a class="logo" href="/"><span class="logo-mark">&lt;/&gt;</span> Solve<span>Code</span></a>
+  <div class="nav-links"><a href="#features">Features</a><a href="#languages">Languages</a><a href="#about">About</a></div>
+  <div class="nav-buttons"><a href="/login" class="login-btn">Login</a><a href="/signup" class="signup-btn">Get Started</a></div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="badge">🚀 Practice • Solve • Improve</div>
+    <h1>Master Coding.<br><span>One Problem</span> at a Time.</h1>
+    <p>Solve programming problems, improve your coding skills, and become a better developer with Solve Code.</p>
+    <div class="hero-buttons"><a href="/signup" class="primary-btn">Start Solving →</a><a href="#languages" class="secondary-btn">Explore Problems</a></div>
+    <div class="stats"><div><strong>100+</strong><small>Problems</small></div><div><strong>3</strong><small>Languages</small></div><div><strong>Free</strong><small>Practice</small></div></div>
+  </div>
+  <div class="hero-code"><pre><code><span class="purple">def</span> solve():
+    n = <span class="blue">int</span>(input())
+
+    <span class="purple">if</span> n % <span class="orange">2</span> == <span class="orange">0</span>:
+        print(<span class="green">"Even"</span>)
+    <span class="purple">else</span>:
+        print(<span class="green">"Odd"</span>)
+
+<span class="comment"># Keep coding 🚀</span></code></pre></div>
+</section>
+
+<section id="languages" class="section">
+  <div class="section-title"><span>LEARN & PRACTICE</span><h2>Choose Your Language</h2><p>Pick a language and start solving problems.</p></div>
+  <div class="language-grid">
+    <div class="language-card"><div class="language-icon">🐍</div><h3>Python</h3><p>Beginner-friendly and powerful. Build your programming fundamentals.</p><a href="/problem/python/1">Explore Python →</a></div>
+    <div class="language-card"><div class="language-icon">C</div><h3>C</h3><p>Master programming fundamentals, logic and memory concepts.</p><a href="/problem/c/1">Explore C →</a></div>
+    <div class="language-card"><div class="language-icon">C++</div><h3>C++</h3><p>Practice object-oriented programming and problem solving.</p><a href="/problem/cpp/1">Explore C++ →</a></div>
+  </div>
+</section>
+
+<section id="features" class="features-section">
+  <div class="section-title"><span>WHY SOLVE CODE?</span><h2>Everything You Need to Improve</h2></div>
+  <div class="features">
+    <div class="feature"><div>⚡</div><h3>Fast Practice</h3><p>Solve coding challenges directly from your browser.</p></div>
+    <div class="feature"><div>🎯</div><h3>Track Progress</h3><p>Improve your problem-solving skills step by step.</p></div>
+    <div class="feature"><div>💻</div><h3>Online Compiler</h3><p>Write and execute your code instantly.</p></div>
+    <div class="feature"><div>🏆</div><h3>Practice Daily</h3><p>Build consistency by solving problems every day.</p></div>
+  </div>
+</section>
+
+<footer><a class="logo" href="/"><span class="logo-mark">&lt;/&gt;</span> Solve<span>Code</span></a><p>Learn. Code. Solve. Grow.</p><p class="copyright">© 2026 Solve Code. All rights reserved.</p></footer>
+</body>
+</html>

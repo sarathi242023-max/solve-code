@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Dashboard — Solve Code</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body>
+<nav class="navbar"><a href="/" class="logo"><span class="logo-mark">&lt;/&gt;</span> Solve<span>Code</span></a><div class="nav-buttons"><a href="/logout" class="login-btn">Logout</a></div></nav>
+<main class="dashboard">
+  <div class="dashboard-header"><span class="small-title">YOUR CODING SPACE</span><h1>Choose a language 👨‍💻</h1><p>Select a category and start solving problems.</p></div>
+  <div class="language-grid">
+    <div class="language-card"><div class="language-icon">🐍</div><h2>Python</h2><p>3 practice problems</p><a href="/problem/python/1" class="primary-btn">Start Solving →</a></div>
+    <div class="language-card"><div class="language-icon">C</div><h2>C</h2><p>3 practice problems</p><a href="/problem/c/1" class="primary-btn">Start Solving →</a></div>
+    <div class="language-card"><div class="language-icon">C++</div><h2>C++</h2><p>3 practice problems</p><a href="/problem/cpp/1" class="primary-btn">Start Solving →</a></div>
+  </div>
+</main>
+</body>
+</html>
